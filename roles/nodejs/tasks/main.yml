@@ -1,0 +1,8 @@
+---
+- name: Add NodeSource repositories for Node.js
+  command: "curl -sL https://rpm.nodesource.com/setup_16.x | bash -"
+
+- name: Install Node.js
+  yum:
+    name: nodejs
+    state: present
