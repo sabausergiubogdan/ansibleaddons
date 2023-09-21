@@ -1,0 +1,8 @@
+---
+- name: Setup EC2 Instance
+  hosts: all
+  roles:
+    - docker
+    - docker-compose
+    - nodejs
+    - ssh-key

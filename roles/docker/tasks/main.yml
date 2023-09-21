@@ -1,0 +1,22 @@
+---
+- name: Install Docker dependencies
+  yum:
+    name: 
+      - yum-utils
+      - device-mapper-persistent-data
+      - lvm2
+    state: present
+
+- name: Add Docker repository
+  command: yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+
+- name: Install Docker CE
+  yum:
+    name: docker-ce
+    state: present
+
+- name: Start and Enable Docker service
+  service:
+    name: docker
+    state: started
+    enabled: yes
